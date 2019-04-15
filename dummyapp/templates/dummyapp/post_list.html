@@ -3,14 +3,10 @@
 {% for post in blogpost %}
 	<div class="post">
 		<div class="date">
-			<p>published: {{ post.published_date }}</p>
+			<p>published date: {{ post.published_date }}</p>
 		</div>
-		<h2><a href="">{{ post.title }}</a></h2>
+		<h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
 		<p>{{ post.text|linebreaksbr }}</p>
 	</div>
 {% endfor %}
-{% endblock %}		
-
-
-
-
+{% endblock %}
